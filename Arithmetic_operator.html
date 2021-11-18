@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .tabs-container {
+            background: #e5e5e5;
+        }
+
+        .tabs-list-container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 62em) {
+            .tabs-list-container {
+                width: 90%;
+            }
+        }
+
+        .tabs-list {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .tabs-list li {
+            width: 25%;
+        }
+
+        @media (max-width: 48em) {
+            .tabs-list li {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 62em) {
+            .tabs-list {
+                width: 95%;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 48em) {
+            .tabs-list {
+                flex-direction: column;
+                height: 65px;
+                overflow: hidden;
+            }
+
+            .tabs-list li {
+                height: 65px;
+                flex: 0 0 auto;
+            }
+
+            .tabs-list li.-active {
+                -webkit-box-ordinal-group: -1;
+                order: -1;
+            }
+
+            .tabs-list li.-active>a:after {
+                position: relative;
+                right: 30px;
+                top: 0;
+                content: '\f078';
+                font-size: 24px;
+                font-family: 'FontAwesome';
+                color: crimson;
+                display: inline-block;
+            
+            }
+
+            .tabs-list.-is-open {
+                height: auto;
+            }
+
+            .tabs-list.-is-open li.-active>a:after {
+                content: '\f077';
+            }
+        }
+
+        .tab {
+            position: relative;
+            display: block;
+            padding: 30px 0;
+            font-size: 16px;
+            line-height: 24px;
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+        }
+
+        @media (max-width: 62em) {
+            .tab {
+                padding: 30px 0;
+            }
+        }
+
+        @media (max-width: 48em) {
+            .tab {
+                padding: 20px 0 20px 5%;
+                text-align: left;
+                font-size: 16px;
+            }
+        }
+
+        .tab.-active {
+            color: crimson;
+            background: #fff;
+        }
+
+        @media (max-width: 48em) {
+            .tab.-active {
+                background: transparent;
+            }
+        }
+
+        .panels-container {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .notice {
+            font-size: 12px;
+            color: #aaa;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Tabs Containers -->
+    <div class="tabs-container">
+        <div class="tabs-list-container js-tabs">
+            <ul class="tabs-list" role="tablist">
+                <li role="tab" aria-controls="tabpanel-one" class="">
+                    <a href="#tabpanel-one" class="tab">Tab 1</a>
+                </li>
+                <li role="tab" aria-controls="tabpanel-two" class="">
+                    <a href="#tabpanel-two" class="tab">Tab 2</a>
+                </li>
+
+                <li role="tab" aria-controls="tabpanel-three" class="">
+                    <a href="#tabpanel-three" class="tab">Tab 3</a>
+                </li>
+
+                <li role="tab" aria-controls="tabpanel-four" class="">
+                    <a href="#tabpanel-four" class="tab">Tab 4</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="panels-container">
+        <div id="tabpanel-one" role="tabpanel">
+            <div class="tab-content">
+                Tab 1 content
+            </div>
+        </div>
+        <div id="tabpanel-two" role="tabpanel">
+            <div class="tab-content">
+                Tab 2 content
+            </div>
+        </div>
+        <div id="tabpanel-three" role="tabpanel">
+            <div class="tab-content">
+                Tab 3 content
+            </div>
+        </div>
+        <div id="tabpanel-four" role="tabpanel">
+            <div class="tab-content">
+                Tab 4 content
+            </div>
+        </div>
+    </div>
+
+    <div class="notice">
+        Resize browser window to see the magic happen!
+    </div>
+
+    <div class="tabs-container">
+        <div class="tabs-list-container js-tabs">
+            <ul class="tabs-list" role="tablist">
+                <li role="tab" aria-controls="tabpanel-one1" class="">
+                    <a href="#tabpanel-one1" class="tab">Tab 1</a>
+                </li>
+                <li role="tab" aria-controls="tabpanel-two1" class="">
+                    <a href="#tabpanel-two1" class="tab">Tab 2</a>
+                </li>
+
+                <li role="tab" aria-controls="tabpanel-three1" class="">
+                    <a href="#tabpanel-three1" class="tab">Tab 3</a>
+                </li>
+
+                <li role="tab" aria-controls="tabpanel-four1" class="">
+                    <a href="#tabpanel-four1" class="tab">Tab 4</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="panels-container">
+        <div id="tabpanel-one1" role="tabpanel">
+            <div class="tab-content">
+                Tab 1 content
+            </div>
+        </div>
+        <div id="tabpanel-two1" role="tabpanel">
+            <div class="tab-content">
+                Tab 2 content
+            </div>
+        </div>
+        <div id="tabpanel-three1" role="tabpanel">
+            <div class="tab-content">
+                Tab 3 content
+            </div>
+        </div>
+        <div id="tabpanel-four1" role="tabpanel">
+            <div class="tab-content">
+                Tab 4 content
+            </div>
+        </div>
+    </div>
+
+    <div class="notice">
+        Resize browser window to see the magic happen!
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script>
+        //open and close tab menu
+          function tab() {
+                ('.js-tabs').easytabs({
+                animate: false,
+                tabActiveClass: "-active",
+                panelActiveClass: "-active",
+                panelContext: $('.panels-container'),
+                defaultTab: "li:first-child",
+                tabs: "ul.tabs-list > li"
+            });
+
+           
+         }
+         
+
+        console.log(tab());
+
+
+       
+
+    </script>
+
+
+</body>
+
+</html>
