@@ -9,6 +9,18 @@
 </head>
 
 <body>
+    <form>
+        Username : 
+        <input type="text" placeholder="Username" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" />
+        
+        Password : 
+        <input type="password" placeholder="********" />
+      
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </form>
+
+
     <script>
         /* values and varibles in javascript*/
         var myName = "Yagnik";
